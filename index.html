@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is super cool</h1>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="pause()">Pause</button>
+
+    <script>
+      const colors = ["crimson", "plum", "orange", "purple"];
+      var index = 0;
+      var result;
+      function start() {
+        result = setInterval(() => {
+          if (index == colors.length) {
+            index = 0;
+          } else {
+            document.body.style.backgroundColor = colors[index];
+            index++;
+          }
+        }, 1000);
+      }
+      function pause() {
+        setTimeout(() => {
+          clearInterval(result);
+        }, 0);
+      }
+
+      function stop() {
+        setTimeout(() => {
+          clearInterval(result);
+        }, 0);
+        index = 0;
+      }
+      //   function start() {
+      //     if (index == colors.length) {
+      //       index = 0;
+      //     } else {
+      //       document.body.style.backgroundColor = colors[index];
+      //       index++;
+      //     }
+      //   }
+
+      //   window.alert("This is cool");
+      //   window.alert(5 + 4);
+
+      //   const result = window.confirm("Are sure about closing the window?");
+      //   console.log(result);
+
+      //   const name = window.prompt("Please tell me your name");
+      //   console.log(name);
+
+      //   window.setTimeout & window.setInterval
+
+      //   //   1. Timer
+      //   setTimeout(() => {
+      //     console.log("Hi, this is Nikhil 🙋‍♂️");
+      //   }, 5000);
+
+      //   //  2. Runner
+      //   const rocketInterval = setInterval(() => {
+      //     console.log("🧑‍🚀🚀");
+      //   }, 2000);
+
+      //   //  3. Stopper
+      //   //     clearInterval(rocketInterval);
+
+      // to stop after printing 3 times
+      //   setTimeout(() => {
+      //     clearInterval(rocketInterval);
+      //   }, 2000 * 3);
+
+      //   Task - Change the whole page color every 2s - cycle
+
+      //   const colors = ["crimson", "plum", "orange", "purple"];
+      //   let index = 0;
+      //   setInterval(() => {
+      //     if (index == colors.length) {
+      //       index = 0;
+      //     } else {
+      //       document.body.style.backgroundColor = colors[index];
+      //       index++;
+      //     }
+      //   }, 2000);
+    </script>
+  </body>
+</html>
